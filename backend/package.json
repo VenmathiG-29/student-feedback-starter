@@ -1,1 +1,56 @@
-
+{
+  "name": "student-feedback-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Student Feedback Platform with advanced features",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "nodemon server.js",
+    "start": "NODE_ENV=production node server.js",
+    "worker": "node workers/queueWorker.js",
+    "lint": "eslint . --ext .js,.mjs",
+    "test": "jest --runInBand",
+    "seed:admin": "node scripts/createAdmin.js",
+    "seed:courses": "node scripts/seedCourses.js"
+  },
+  "dependencies": {
+    "@bull-board/express": "^5.15.0",
+    "bcrypt": "^5.1.1",
+    "bull": "^4.12.2",
+    "cloudinary": "^1.41.0",
+    "compression": "^1.7.4",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "express-async-errors": "^3.1.1",
+    "express-rate-limit": "^7.4.0",
+    "helmet": "^7.1.0",
+    "http-status-codes": "^2.3.0",
+    "joi": "^17.12.1",
+    "jsonwebtoken": "^9.0.2",
+    "lodash": "^4.17.21",
+    "mongoose": "^8.5.2",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "multer-storage-cloudinary": "^4.0.0",
+    "nodemailer": "^6.9.14",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.2",
+    "pdfkit": "^0.14.0",
+    "sanitize-html": "^2.12.1",
+    "socket.io": "^4.8.1",
+    "uuid": "^9.0.1",
+    "winston": "^3.14.2"
+  },
+  "devDependencies": {
+    "eslint": "^9.6.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.2",
+    "supertest": "^7.0.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
