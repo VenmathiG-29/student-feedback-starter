@@ -1,18 +1,18 @@
-// components/PrivateRoute.jsx
+// components/AdminRoute.jsx
 import React from "react";
 import { Navigate, Outlet } from "react-router-dom";
 import { useAuth } from "../utils/auth";
 
-const PrivateRoute = ({ roles = [] }) => {
+const AdminRoute = () => {
   const { user, isAuthenticated } = useAuth();
 
-  // Not logged in
+  // If not authenticated, redirect to login
   if (!isAuthenticated) {
     return <Navigate to="/login" replace />;
   }
 
-  // Role-based access
-  if (roles.length > 0 && !roles.includes(user.role)) {
+  // If not admin, redirect to unauthorized page
+  if (user.role !== "admin") {
     return <Navigate to="/unauthorized" replace />;
   }
 
@@ -20,4 +20,4 @@ const PrivateRoute = ({ roles = [] }) => {
   return <Outlet />;
 };
 
-export default PrivateRoute;
+export default AdminRoute;
