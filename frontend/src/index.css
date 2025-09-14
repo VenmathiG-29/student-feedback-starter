@@ -1,0 +1,112 @@
+/* ----------------------------- */
+/* Global Styles & Utility Classes */
+/* ----------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+:root {
+  --primary-color: #1e3a8a;
+  --secondary-color: #facc15;
+  --success-color: #16a34a;
+  --error-color: #dc2626;
+  --font-family: "Inter", sans-serif;
+  --border-radius: 0.5rem;
+  --transition: 0.3s ease-in-out;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background-color: #f3f4f6;
+  color: #111827;
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+/* Links */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: var(--secondary-color);
+}
+
+/* Buttons */
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--border-radius);
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  font-weight: 600;
+  transition: all var(--transition);
+}
+
+button:hover {
+  background-color: var(--secondary-color);
+  color: #111827;
+}
+
+/* Inputs */
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border-radius: var(--border-radius);
+  border: 1px solid #d1d5db;
+  transition: border-color var(--transition);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+}
+
+/* Containers */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+/* Utility Classes */
+.text-center {
+  text-align: center;
+}
+
+.mt-1 {
+  margin-top: 0.25rem;
+}
+.mt-2 {
+  margin-top: 0.5rem;
+}
+.mt-4 {
+  margin-top: 1rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+/* Notifications */
+.toast-success {
+  background-color: var(--success-color) !important;
+  color: #fff !important;
+}
+.toast-error {
+  background-color: var(--error-color) !important;
+  color: #fff !important;
+}
